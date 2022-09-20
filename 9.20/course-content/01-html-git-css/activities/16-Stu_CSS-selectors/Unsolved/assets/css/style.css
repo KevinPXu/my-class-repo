@@ -1,13 +1,14 @@
-/* TODO: Label selector type */
+/* * refers to all selectors, so will show on all elements */
 * {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  }
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
 
-/* TODO: Label selector type */
+/* will show on the body element*/
 body {
   background-color: lemonchiffon;
 }
 
+/* will show on both header and footer elements */
 header,
 footer {
   width: 100%;
@@ -16,18 +17,18 @@ footer {
   color: #f0ead6;
   background-color: #191970;
 }
-
+/* will show as a background for the image link*/
 figure {
   width: 200px;
   background-color: #f0ead6;
 }
 
-/* TODO: Label selector type */
+/* will make class highlighted-text bolder*/
 .highlighted-text {
   font-weight: bolder;
 }
 
-/* TODO: Label selector type */
+/* will make ID contact-section have the background color below */
 #contact-section {
   background-color: #f0ead6;
 }
