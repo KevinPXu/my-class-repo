@@ -9,13 +9,18 @@ body {
 
 main {
   display: flex;
+  /* Forces elements to the next line if they don't fit */
   flex-wrap: wrap;
+  /*reverse the order of elements*/
+  /*flex-wrap: wrap-reverse;*/
   margin-top: 2%;
 }
 
 .main-header {
   display: flex;
+  /* Forces elements to the next line if they don't fit */
   flex-wrap: wrap;
+  /*flex-wrap: wrap-reverse;*/
   justify-content: space-between;
   padding: 60px;
   background: #13293d;
@@ -23,7 +28,7 @@ main {
 }
 
 .card {
-  flex: 1 0 0;
+  flex: 1 0 0;/* element shrinks to smallest size possible */
   padding: 10px;
   text-align: center;
   border-style: solid;
@@ -38,6 +43,5 @@ main {
 
 .card img {
   width: 100%;
-  /* The client insists that images be at least 400px */
   min-width: 400px;
 }
