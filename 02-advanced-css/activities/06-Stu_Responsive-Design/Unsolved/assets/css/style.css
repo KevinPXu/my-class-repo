@@ -20,7 +20,7 @@ header {
 
 /* 
 What happens when we set the display property to flex? 
-TODO: Write your answer here 
+TODO: will automatically put all elements to inline 
 */
 nav {
   display: flex;
@@ -36,7 +36,7 @@ nav a {
 
 /* 
 What is the flex-wrap property? 
-TODO: Write your answer here 
+TODO: Allows the elements on the screen to automatically wrap when space grows or shrinks
 */
 main {
   display: flex;
@@ -50,7 +50,6 @@ aside {
   text-align: center;
 }
 
-
 footer {
   padding: 20px;
   text-align: center;
@@ -60,7 +59,7 @@ footer {
 
 /* 
 What does the justify-content property do? 
-TODO: Write your answer here 
+TODO: Allows you to align the element to different parts of the screen
 */
 .products {
   flex: 4;
@@ -74,7 +73,7 @@ TODO: Write your answer here
 /* 
 What is the flex property a shorthand property for?
 What is it doing here? 
-TODO: Write your answer here 
+TODO: The flex property is a sub- property of the flexible box module, it contains flex-grow, flex-shrink, flex basis. here it is telling the card that it cannot grow or shrink and must be at least 400px. 
 */
 .card {
   border-style: solid;
@@ -99,7 +98,7 @@ TODO: Write your answer here
 /* 
 What does the flex-direction property define?
 What is it doing here? 
-TODO: Write your answer here 
+TODO: allows control over whether the content is in a column or in a row, here it is changing nav to column once the screen hits 768px or lower
 */
 @media screen and (max-width: 768px) {
   main,

@@ -19,7 +19,7 @@ h1 {
 
 h2 {
   margin: 2% 0;
-  font-size: 250%;
+  font-size: 180%;
 }
 
 nav ul {
@@ -59,20 +59,9 @@ article p {
   font-size: 110%;
 }
 
-article ul {
-  margin-left: 5%;
-  font-size: 110%;
-  list-style: circle;
-}
+/* TODO: Style the keyword - underline, black text, grab cursor */
 
-.hide {
-  display: none;
-}
-
-.resources:hover + .hide {
-  display: block;
-  color: red;
-}
+/* TODO: Position tooltip above the keyword, same color as header and nav links, no border-radius, smaller font size */
 
 aside {
   width: 25%;
@@ -97,7 +86,27 @@ footer {
   color: #fff;
 }
 
-/* TODO: Add styles to display and hide the resource links */
+.resources .links {
+  display: none;
+  padding: 1% 0;
+}
+
+.resources:hover .links {
+  display: block;
+}
+
+.resources h3 {
+  font-size: 150%;
+}
+
+.links a {
+  color: #772014;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
 
 @media screen and (max-width: 768px) {
   header,

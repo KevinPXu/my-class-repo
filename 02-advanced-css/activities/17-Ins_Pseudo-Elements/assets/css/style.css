@@ -17,9 +17,46 @@ h1 {
   font-size: 200%;
 }
 
+/* Added the rest of the header text */
+
+h1::after {
+  font-family: Impact;
+  content: 'Pseudo Elements';
+  color: #8ac4ff;
+  margin-left: 5px;
+}
+
 h2 {
   margin: 2% 0;
-  font-size: 250%;
+  font-size: 180%;
+}
+
+h3 {
+  margin: 2% 0;
+  font-size: 150%;
+}
+
+/* Added asterisk before every h3 heading */
+/*https://unicode-table.com/en/*/
+h3::before {
+  font-family: Impact;
+  content: '\273A';
+  color: #772014;
+  margin-right: 5px;
+}
+
+/* Added symbols before and after the nav links */
+nav li::before,
+nav li::after {
+  content: '\2766';
+  color: #8ac4ff;
+  padding: 1%;
+  font-family: cursive;
+}
+
+p::first-line {
+  color: blue;
+  text-transform: uppercase;
 }
 
 nav ul {
@@ -29,7 +66,7 @@ nav ul {
 }
 
 nav a {
-  color: #b9c6ae;
+  color: #b9C6ae;
   font-weight: bold;
   text-decoration: none;
 }
@@ -61,17 +98,9 @@ article p {
 
 article ul {
   margin-left: 5%;
+  margin-bottom: 2%;
   font-size: 110%;
   list-style: circle;
-}
-
-.hide {
-  display: none;
-}
-
-.resources:hover + .hide {
-  display: block;
-  color: red;
 }
 
 aside {
@@ -97,11 +126,8 @@ footer {
   color: #fff;
 }
 
-/* TODO: Add styles to display and hide the resource links */
-
 @media screen and (max-width: 768px) {
-  header,
-  main {
+  header, main {
     flex-direction: column;
   }
 
