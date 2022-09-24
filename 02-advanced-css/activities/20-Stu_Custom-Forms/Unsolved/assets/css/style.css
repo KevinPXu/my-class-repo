@@ -1,9 +1,10 @@
+/* changing body tag to flex and making it verticle with a line height of 1.3 */
 body {
   display: flex;
   flex-direction: column;
   line-height: 1.3;
 }
-
+/* centering the header items vertically in the header and setting that portion of the page to the background color with the text color of white */
 header {
   display: flex;
   justify-content: space-between;
@@ -13,15 +14,16 @@ header {
   color: #fff;
 }
 
+/* sets h1 headers font size to 200 */
 h1 {
   font-size: 200%;
 }
-
+/* sets h2 headers font size to 250%, and sets a margin around the header */
 h2 {
   margin: 2% 0;
   font-size: 250%;
 }
-
+/*  */
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -29,7 +31,7 @@ nav ul {
 }
 
 nav a {
-  color: #b9C6ae;
+  color: #b9c6ae;
   font-weight: bold;
   text-decoration: none;
 }
@@ -85,7 +87,7 @@ button {
   cursor: pointer;
 }
 
-/* What does this CSS rule do? */
+/* changes the appearance of the select element on the page (dropdown menu) */
 select {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -101,23 +103,26 @@ select {
   max-width: 100%;
 }
 
-.text-input, select {
+.text-input,
+select {
   padding: 1%;
   outline: none;
-  border: 1.2px solid #b9C6ae;
+  border: 1.2px solid #b9c6ae;
 }
 
-.text-input:hover, .checkbox:hover, 
-select:hover, button:hover {
+.text-input:hover,
+.checkbox:hover,
+select:hover,
+button:hover {
   box-shadow: 0 0 5px #999;
 }
 
-/* What does this pseudo-class mean? */
+/* Adds grey boxes to the right side of the current text input to let you know which box you currently have clicked on */
 .text-input:focus {
   border-right-width: 5px;
 }
 
-/* What does this pseudo-class mean? */
+/* Gives the text boxes dashed lines */
 .text-input:placeholder-shown {
   border-style: dashed;
 }
@@ -136,13 +141,13 @@ select:hover, button:hover {
   margin-right: 2%;
 }
 
-/* What does this selector do? */
+/* once the checkbox is clicked, the changes the font to italic */
 .checkbox:checked + label {
   color: #999999;
   font-style: italic;
 }
 
-/* What does this selector do? */
+/* after the checkbox is check and once the label has changed color, it will also add the thanks after what is in the label */
 .checkbox:checked + label::after {
   margin-left: 10px;
   font-size: 90%;
