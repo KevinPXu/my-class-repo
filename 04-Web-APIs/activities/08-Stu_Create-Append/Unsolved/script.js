@@ -17,6 +17,10 @@ h1El.textContent = "Welcome to my page";
 kittenEl.textContent = "This is my kitten 🐱.";
 nameEl.textContent = "His name is Jax.";
 favoriteEl.textContent = "My favorite foods are:";
+li1.textContent = "Burgers";
+li2.textContent = "fries";
+li3.textContent = "Dr. Pepper";
+li4.textContent = "Chicken Nuggies";
 
 body.appendChild(h1El);
 body.appendChild(infoEl);
@@ -24,10 +28,12 @@ infoEl.appendChild(imgEl);
 infoEl.appendChild(kittenEl);
 infoEl.appendChild(nameEl);
 body.appendChild(favoriteEl);
-// Append ordered list 
+// Append ordered list
 favoriteEl.appendChild(listEl);
-
-
+listEl.appendChild(li1);
+listEl.appendChild(li2);
+listEl.appendChild(li3);
+listEl.appendChild(li4);
 
 h1El.setAttribute("style", "margin:auto; width:50%; text-align:center;");
 infoEl.setAttribute("style", "margin:auto; width:50%; text-align:center;");
@@ -35,5 +41,24 @@ imgEl.setAttribute("src", "http://placekitten.com/200/300");
 nameEl.setAttribute("style", "font-size:25px; text-align:center;");
 kittenEl.setAttribute("style", "font-size:25px; text-align:center;");
 favoriteEl.setAttribute("style", "font-size:20px;");
-
+listEl.setAttribute(
+  "style",
+  "background-color: #333333; padding: 20px; color: white;"
+);
+li1.setAttribute(
+  "style",
+  "padding: 5; margin-left: 35px; background-color: blue"
+);
+li2.setAttribute(
+  "style",
+  "padding: 5; margin-left: 35px; background-color: green"
+);
+li3.setAttribute(
+  "style",
+  "padding: 5; margin-left: 35px; background-color: red"
+);
+li4.setAttribute(
+  "style",
+  "padding: 5; margin-left: 35px; background-color: yellow"
+);
 // TODO: Add ordered list items containing four favorite foods
