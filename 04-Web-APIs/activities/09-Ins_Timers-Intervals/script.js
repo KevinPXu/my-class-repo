@@ -1,5 +1,5 @@
 // Selects element by class
-//We store the interval in a variable. This is an important step, so that we can get the interval to stop. 
+//We store the interval in a variable. This is an important step, so that we can get the interval to stop.
 var timeEl = document.querySelector(".time");
 
 // Selects element by id
@@ -10,12 +10,12 @@ var secondsLeft = 11;
 function setTime() {
   // Sets interval in variable
   //The setInterval() method takes a function as its first argument
-  var timerInterval = setInterval(function() {
+  var timerInterval = setInterval(function () {
     //The function is the action that we want to be evaluated at each interval. This function prints a message at each interval
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
 
-    if(secondsLeft === 0) {
+    if (secondsLeft === 0) {
       // Stops execution of action at set interval
       //When the countdown reaches zero, we want the action to stop. The clearInterval() method stops the execution of the interval. It takes one parameter: the variable name assigned to the interval
       clearInterval(timerInterval);
@@ -33,7 +33,6 @@ function sendMessage() {
   var imgEl = document.createElement("img");
   imgEl.setAttribute("src", "images/image_1.jpg");
   mainEl.appendChild(imgEl);
-
 }
 
 setTime();

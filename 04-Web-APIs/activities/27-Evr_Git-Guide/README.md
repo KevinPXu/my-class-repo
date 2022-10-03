@@ -6,8 +6,7 @@ Git is an important tool that allows developers to track and store versions of c
 
 For more information, review the [Full-Stack Blog guide on getting started with Git](https://coding-boot-camp.github.io/full-stack/git/getting-started-with-git).
 
-## Configure Local Git Default Branch to main
-
+## Configure Local Git Default Branch to ma
 First we need to set the local Git default branch to `main`.
 
 Historically, the most common name for the main body of a codebase has been `master`. However, `main` has been gaining in popularity. In fact, GitHub now uses `main` as the default name for its repositories&mdash;as do the projects in this course.
