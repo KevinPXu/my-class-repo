@@ -1,12 +1,13 @@
-var formEl = $('#skills-form');
-var nameInputEl = $('#skill-name');
-var dateInputEl = $('#datepicker');
-var skillsListEl = $('#skills-list');
+var formEl = $("#skills-form");
+var nameInputEl = $("#skill-name");
+var dateInputEl = $("#datepicker");
+var skillsListEl = $("#skills-list");
+var sourceList = [];
 
 var printSkills = function (name, date) {
-  var listEl = $('<li>');
-  var listDetail = name.concat(' on ', date);
-  listEl.addClass('list-group-item').text(listDetail);
+  var listEl = $("<li>");
+  var listDetail = name.concat(" on ", date);
+  listEl.addClass("list-group-item").text(listDetail);
   listEl.appendTo(skillsListEl);
 };
 
@@ -17,20 +18,48 @@ var handleFormSubmit = function (event) {
   var dateInput = dateInputEl.val();
 
   if (!nameInput || !dateInput) {
-    console.log('You need to fill out the form!');
+    console.log("You need to fill out the form!");
     return;
   }
 
   printSkills(nameInput, dateInput);
 
-  nameInputEl.val('');
-  dateInputEl.val('');
+  nameInputEl.val("");
+  dateInputEl.val("");
 };
 
-formEl.on('submit', handleFormSubmit);
+formEl.on("submit", handleFormSubmit);
 
 // Add Autocomplete widget here
 //
+$(function () {
+  var sourceList = [
+    "ActionScript",
+    "AppleScript",
+    "Asp",
+    "BASIC",
+    "C",
+    "C++",
+    "Clojure",
+    "COBOL",
+    "ColdFusion",
+    "Erlang",
+    "Fortran",
+    "Groovy",
+    "Haskell",
+    "Java",
+    "JavaScript",
+    "Lisp",
+    "Perl",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Scala",
+    "Scheme",
+  ];
+  $("#skill-name").autocomplete({ source: sourceList });
+});
 
 // Add Datepicker widget here
 //
+$("#datepicker").datepicker();

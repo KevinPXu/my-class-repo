@@ -1,9 +1,10 @@
 :root {
-  --brown: #a88f82;
+  --brown: red;
   --tan: #f5e1d5;
-  --teal: #71a8a7;
-  --lightteal: #d5f5f5;
+  --teal: black;
+  --lightteal: yellow;
   --light: #fffaf7;
+  --pixel: "Silkscreen", cursive;
 }
 
 ::selection {
@@ -13,11 +14,13 @@
 
 .custom-navbar {
   background-color: var(--teal);
+  font-family: var(--pixel);
 }
 
 .custom-navbar a {
   font-size: 1.5rem;
   color: var(--lightteal);
+  font-family: var(--pixel);
 }
 
 .custom-navbar a:hover {
@@ -27,11 +30,13 @@
 .custom-jumbotron {
   background-color: var(--lightteal);
   color: var(--teal);
+  font-family: var(--pixel);
 }
 
 .custom-btn {
   background-color: var(--brown);
   color: var(--light);
+  font-family: var(--pixel);
 }
 
 .custom-btn:hover {
@@ -42,9 +47,11 @@
 .custom-card {
   border-color: var(--teal);
   color: var(--brown);
+  font-family: var(--pixel);
 }
 
 .custom-card-header {
   background-color: var(--teal);
   color: var(--lightteal);
+  font-family: var(--pixel);
 }
