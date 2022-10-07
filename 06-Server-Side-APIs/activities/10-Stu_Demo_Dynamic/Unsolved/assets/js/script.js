@@ -1,8 +1,8 @@
-var userContainer = document.getElementById('users');
-var fetchButton = document.getElementById('fetch-button');
+var userContainer = document.getElementById("users");
+var fetchButton = document.getElementById("fetch-button");
 
 function getApi() {
-  var requestUrl = 'https://api.github.com/users?per_page=5';
+  var requestUrl = "https://api.github.com/users?per_page=5";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -12,6 +12,12 @@ function getApi() {
       // Use the console to examine the response
       console.log(data);
       // TODO: Loop through the data and generate your HTML
+      for (var i = 0; i < data.length; i++) {
+        var newParagraph = $("<p>");
+        newParagraph.attr("class", "paragraph");
+        newParagraph.text(data[i].login + " " + data[i].url);
+        $("#users").append(newParagraph);
+      }
     });
 }
-fetchButton.addEventListener('click', getApi);
+fetchButton.addEventListener("click", getApi);

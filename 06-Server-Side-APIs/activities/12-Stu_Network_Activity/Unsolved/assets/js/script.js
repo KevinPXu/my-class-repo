@@ -1,4 +1,4 @@
-requestUrl = 'https://api.github.com/orgs/nodejs/repos';
+var requestUrl = "https://api.github.com/orgs/nodejs/repos";
 
 fetch(requestUrl)
   .then(function (response) {
