@@ -44,43 +44,43 @@ Step One:
 
 Q: What are you going to do? 
 
-A: 
+A: iterate through the array
 
 Q: How are you going to do it? 
 
-A: 
+A: using a for loop
 
 Q: Why are you going to do it? 
 
-A: 
+A: be able to eventually add each number to a sum variable.
 
 Step Two: 
 
 Q: What are you going to do? 
 
-A: 
+A: for each value in the array, add it to the sum variable
 
 Q: How are you going to do it? 
 
-A: 
+A: adding the value from the array to the current value of sum. sum should start at 0.
 
 Q: Why are you going to do it? 
 
-A: 
+A: to get a new value that is the sum of all concurrent values. 
 
 Step Three: 
 
 Q: What are you going to do? 
 
-A: 
+A: after the array is iterated through, return the sum value
 
 Q: How are you going to do it? 
 
-A: 
+A: return out of the function with the sum variable.
 
 Q: Why are you going to do it? 
 
-A: 
+A: to retrieve the sum variable from the function.
 
 
 
@@ -115,43 +115,43 @@ Step One:
 
 Q: What are you going to do? 
 
-A: 
+A: Iterate through the array and add each value to a sum variable that starts at 0
 
 Q: How are you going to do it? 
 
-A: 
+A: using for loop and the += operator to add each value. 
 
 Q: Why are you going to do it? 
 
-A: 
+A: to obtain a sum value of everything in the array. 
 
 Step Two: 
 
 Q: What are you going to do? 
 
-A: 
+A: divide the sum variable by the length of the array. 
 
 Q: How are you going to do it? 
 
-A: 
+A: using the .length method
 
 Q: Why are you going to do it? 
 
-A: 
+A: to obtain the average of the array. 
 
 Step Three: 
 
 Q: What are you going to do? 
 
-A: 
+A: return the final average value
 
 Q: How are you going to do it? 
 
-A: 
+A: using a return call
 
 Q: Why are you going to do it? 
 
-A: 
+A: to obtain the average value from the function
 
 
 <hr>
