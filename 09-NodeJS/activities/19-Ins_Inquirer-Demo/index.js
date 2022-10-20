@@ -1,27 +1,26 @@
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
 
 inquirer
   .prompt([
     {
-      type: 'input',
-      message: 'What is your user name?',
-      name: 'username',
+      type: "input",
+      message: "What is your user name?",
+      name: "username",
     },
     {
-      type: 'password',
-      message: 'What is your password?',
-      name: 'password',
+      type: "password",
+      message: "What is your password?",
+      name: "password",
     },
     {
-      type: 'password',
-      message: 'Re-enter password to confirm:',
-      name: 'confirm',
+      type: "password",
+      message: "Re-enter password to confirm:",
+      name: "confirm",
     },
   ])
   .then((response) => {
-    console.log(response)
+    console.log(response);
     response.confirm === response.password
-      ? console.log('Success!')
-      : console.log('You forgot your password already?!')
-  }
-  );
+      ? console.log("Success!")
+      : console.log("You forgot your password already?!");
+  });
