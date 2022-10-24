@@ -14,11 +14,15 @@ describe("DayCare", () => {
     it("should add a child to the 'children' array", () => {
       const child = new Child("Tammy", 1);
       const dayCare = new DayCare();
+      const mock = jest.spyOn(console, "log");
+      mock.mockImplementation(() => {});
 
       dayCare.addChild(child);
 
+      expect(mock).toBeCalledWith(dayCare.addChild, child);
       expect(dayCare.children.length).toEqual(1);
       expect(dayCare.children[0]).toBe(child);
+      mock.mockRestore();
     });
 
     it("should not add a child over the 'ageLimit'", () => {
@@ -44,7 +48,7 @@ describe("DayCare", () => {
       dayCare.children = [
         new Child("Tammy", 1),
         new Child("Mark", 2),
-        new Child("Alvin", 1)
+        new Child("Alvin", 1),
       ];
 
       dayCare.addChild(child);
@@ -81,7 +85,7 @@ describe("DayCare", () => {
       expect(removed).toBe(child2);
       expect(dayCare.children.length).toEqual(2);
       expect(
-        dayCare.children.some(child => child.name === child2.name)
+        dayCare.children.some((child) => child.name === child2.name)
       ).toEqual(false);
       expect(mock).toBeCalledWith(`Picked up ${child2.name} from day care`);
       mock.mockRestore();
