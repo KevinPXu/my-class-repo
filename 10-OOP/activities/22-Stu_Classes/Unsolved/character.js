@@ -1,15 +1,36 @@
 class Character {
   // TODO: Add a constructor
+  constructor(name, strength, hitPoints) {
+    this.name = name;
+    this.strength = strength;
+    this.hitPoints = hitPoints;
+  }
+
   // TODO: Create a printStats() method that console logs `this.name`, `this.strength`, and `this.hitPoints`
+  printStats() {
+    console.log(`Name: ${this.name}`);
+    console.log(`Strength: ${this.strength}`);
+    console.log(`Hit Points: ${this.hitPoints}\n`);
+  }
 
   // TODO: Create a isAlive() method that returns a boolean based on whether or not a character's "hitpoints" are <= 0
-
+  isAlive() {
+    if (this.hitPoints > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   // TODO: Create a attack() method that accepts an opponent object and decreases the opponent's "hitPoints" by this character's strength
+  attack(person2) {
+    console.log(`${this.name} attacked ${person2.name}`);
+    person2.hitPoints -= this.strength;
+  }
 }
 
 // Creates two unique characters using the "character" constructor
-const grace = new Character('Grace', 30, 75);
-const dijkstra = new Character('Dijkstra', 20, 105);
+const grace = new Character("Grace", 30, 75);
+const dijkstra = new Character("Dijkstra", 20, 105);
 
 // This keeps track of whose turn it is
 let graceTurn = true;
@@ -21,7 +42,7 @@ const turnInterval = setInterval(() => {
   // If either character is not alive, end the game
   if (!grace.isAlive() || !dijkstra.isAlive()) {
     clearInterval(turnInterval);
-    console.log('Game over!');
+    console.log("Game over!");
   } else if (graceTurn) {
     grace.attack(dijkstra);
     dijkstra.printStats();
