@@ -1,1 +1,8 @@
-[{"product":"test","review":"test","username":"Test","review_id":"b2ef"}]
+[
+  {
+    "product": "test",
+    "review": "test",
+    "username": "Test",
+    "review_id": "b2ef"
+  }
+]

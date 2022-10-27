@@ -1,8 +1,8 @@
-const express = require('express');
-const path = require('path');
-const fs = require('fs');
+const express = require("express");
+const path = require("path");
+const fs = require("fs");
 // Helper method for generating unique ids
-const uuid = require('./helpers/uuid');
+const uuid = require("./helpers/uuid");
 
 const PORT = 3001;
 
@@ -11,14 +11,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/index.html'))
+app.get("/", (req, res) =>
+  res.sendFile(path.join(__dirname, "/public/index.html"))
 );
 
 // GET request for reviews
-app.get('/api/reviews', (req, res) => {
+app.get("/api/reviews", (req, res) => {
   // Send a message to the client
   res.json(`${req.method} request received to get reviews`);
 
@@ -27,7 +27,7 @@ app.get('/api/reviews', (req, res) => {
 });
 
 // GET request for a single review
-app.get('/api/reviews/:review_id', (req, res) => {
+app.get("/api/reviews/:review_id", (req, res) => {
   if (req.body && req.params.review_id) {
     console.info(`${req.method} request received to get a single a review`);
     const reviewId = req.params.review_id;
@@ -38,12 +38,12 @@ app.get('/api/reviews/:review_id', (req, res) => {
         return;
       }
     }
-    res.json('Review ID not found');
+    res.json("Review ID not found");
   }
 });
 
 // POST request to add a review
-app.post('/api/reviews', (req, res) => {
+app.post("/api/reviews", (req, res) => {
   // Log that a POST request was received
   console.info(`${req.method} request received to add a review`);
 
@@ -60,11 +60,15 @@ app.post('/api/reviews', (req, res) => {
       review_id: uuid(),
     };
 
-    // Convert the data to a string so we can save it
-    const reviewString = JSON.stringify(newReview);
+    const fileData = JSON.parse(fs.readFileSync("./db/reviews.json"));
 
+    // Convert the data to a string so we can save it
+
+    fileData.push(newReview);
+
+    const newFileData = JSON.stringify(fileData);
     // Write the string to a file
-    fs.writeFile(`./db/reviews.json`, reviewString, (err) =>
+    fs.writeFile(`./db/reviews.json`, newFileData, (err) =>
       err
         ? console.error(err)
         : console.log(
@@ -73,19 +77,19 @@ app.post('/api/reviews', (req, res) => {
     );
 
     const response = {
-      status: 'success',
+      status: "success",
       body: newReview,
     };
 
     console.log(response);
     res.json(response);
   } else {
-    res.json('Error in posting review');
+    res.json("Error in posting review");
   }
 });
 
 // GET request for upvotes
-app.get('/api/upvotes', (req, res) => {
+app.get("/api/upvotes", (req, res) => {
   // Inform the client
   res.json(`${req.method} request received to retrieve upvote count`);
 
@@ -94,7 +98,7 @@ app.get('/api/upvotes', (req, res) => {
 });
 
 // Post request to upvote a review
-app.post('/api/upvotes/:review_id', (req, res) => {
+app.post("/api/upvotes/:review_id", (req, res) => {
   // Log our request to the terminal
   if (req.body && req.params.review_id && req.body.upvote) {
     console.info(`${req.method} request received to upvote a review`);
@@ -114,7 +118,7 @@ app.post('/api/upvotes/:review_id', (req, res) => {
         return;
       }
     }
-    res.json('Review ID not found');
+    res.json("Review ID not found");
   }
 });
 
