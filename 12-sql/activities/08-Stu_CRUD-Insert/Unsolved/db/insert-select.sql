@@ -1,3 +1,4 @@
+-- Adds values into biographies with an ID and name attribute --
 INSERT INTO biographies (id, name)
 VALUES
     ( 001, "Diary of Anne Frank"),
