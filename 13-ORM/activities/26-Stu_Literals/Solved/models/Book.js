@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Book extends Model {}
 
@@ -29,17 +29,17 @@ Book.init(
     },
     edition: {
       type: DataTypes.INTEGER,
-      defaultValue: 1
+      defaultValue: 1,
     },
     is_paperback: {
       type: DataTypes.BOOLEAN,
-      defaultValue: true
+      defaultValue: true,
     },
     reader_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'reader',
-        key: 'id',
+        model: "reader",
+        key: "id",
       },
     },
   },
@@ -48,7 +48,7 @@ Book.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'book'
+    modelName: "book",
   }
 );
 
