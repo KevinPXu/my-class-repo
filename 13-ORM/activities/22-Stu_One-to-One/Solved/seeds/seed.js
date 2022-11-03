@@ -1,7 +1,7 @@
-const sequelize = require("../config/connection");
-const { Reader, LibraryCard } = require("../models");
+const sequelize = require('../config/connection');
+const { Reader, LibraryCard } = require('../models');
 
-const readerSeedData = require("./readerSeedData.json");
+const readerSeedData = require('./readerSeedData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -21,5 +21,3 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
-
-console.log(1 + 1);

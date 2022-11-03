@@ -11,18 +11,13 @@ LibraryCard.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // Use Sequelize's UUID functionality to generate a unique number for the library card instead of making us do it ourselves
     card_number: {
       type: DataTypes.UUID,
       defaultValue: UUIDV4,
     },
-    // TODO: Add a comment describing what this column holds information for 
-    //the column contains the reader_id in an int type
     reader_id: {
       type: DataTypes.INTEGER,
       references: {
-        // TODO: Add a comment describing where `reader` comes from
-        //references the reader foreign key 
         model: 'reader',
         key: 'id',
       },

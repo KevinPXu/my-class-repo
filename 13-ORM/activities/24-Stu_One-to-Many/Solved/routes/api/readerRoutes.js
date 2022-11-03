@@ -1,18 +1,13 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
+// Include the Book model with the other imports
 const { Reader, Book, LibraryCard } = require('../../models');
 
 // GET all readers
 router.get('/', async (req, res) => {
   try {
     const readerData = await Reader.findAll({
+      // Add Book as a second model to JOIN with
       include: [{ model: LibraryCard }, { model: Book }],
-      // TODO: Add a sequelize literal to get a count of short books
-      attributes: {
-        include: [[
-          sequelize.literal('')
-        ]]
-      }
     });
     res.status(200).json(readerData);
   } catch (err) {
@@ -24,8 +19,8 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const readerData = await Reader.findByPk(req.params.id, {
+      // Add Book as a second model to JOIN with
       include: [{ model: LibraryCard }, { model: Book }],
-      // TODO: Add a sequelize literal to get a count of short books
     });
 
     if (!readerData) {

@@ -1,9 +1,9 @@
-const router = require("express").Router();
+const router = require('express').Router();
 // use object destructuring to import our two models by name
-const { LibraryCard, Reader } = require("../../models");
+const { LibraryCard, Reader } = require('../../models');
 
 // GET all cards
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // find all library cards and perform a JOIN to include all associated Readers
     const libraryCardData = await LibraryCard.findAll({
@@ -16,14 +16,14 @@ router.get("/", async (req, res) => {
 });
 
 // GET a single card
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const libraryCardData = await LibraryCard.findByPk(req.params.id, {
       include: [{ model: Reader }],
     });
 
     if (!libraryCardData) {
-      res.status(404).json({ message: "No library card found with that id!" });
+      res.status(404).json({ message: 'No library card found with that id!' });
       return;
     }
 
@@ -34,11 +34,10 @@ router.get("/:id", async (req, res) => {
 });
 
 // CREATE a card
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
+    // Since the model will create a unique UUID value by default, we just need to provide the `id` of the Reader that will own this card
     const locationData = await LibraryCard.create({
-      // TODO: Add a comment describing where the value of `req.body.reader_id` comes from
-      //comes from the model of Library Cards reader_id
       reader_id: req.body.reader_id,
     });
     res.status(200).json(locationData);
@@ -48,7 +47,7 @@ router.post("/", async (req, res) => {
 });
 
 // DELETE a card
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const libraryCardData = await LibraryCard.destroy({
       where: {
@@ -57,7 +56,7 @@ router.delete("/:id", async (req, res) => {
     });
 
     if (!libraryCardData) {
-      res.status(404).json({ message: "No library card found with that id!" });
+      res.status(404).json({ message: 'No library card found with that id!' });
       return;
     }
 
@@ -68,4 +67,3 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
-
